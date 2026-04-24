@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "672409292297",
+    "project_id": "hydraulic-store",
+    "storage_bucket": "hydraulic-store.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672409292297:android:5762732c239b15416332d8",
+        "android_client_info": {
+          "package_name": "hydraulicstore.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdRt_4UDllutm0WcOiMC7D1WypCmyHiy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
