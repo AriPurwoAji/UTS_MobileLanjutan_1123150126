@@ -104,6 +104,35 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
+  // ================= CHECK EMAIL VERIFICATION =================
+  Future<bool> checkEmailVerification() async {
+    _setLoading();
+    try {
+      await _firebaseUser?.reload();
+      _firebaseUser = _auth.currentUser;
+
+      if (_firebaseUser?.emailVerified ?? false) {
+        return await _verifyTokenToBackend();
+      } else {
+        _status = AuthStatus.emailNotVerified;
+        notifyListeners();
+        return false;
+      }
+    } catch (e) {
+      _setError("Gagal cek verifikasi");
+      return false;
+    }
+  }
+
+  // ================= RESEND EMAIL VERIFICATION =================
+  Future<void> resendVerificationEmail() async {
+    try {
+      await _firebaseUser?.sendEmailVerification();
+    } catch (e) {
+      _setError("Gagal kirim ulang email");
+    }
+  }
+
   // ================= LOGIN GOOGLE =================
   Future<bool> loginWithGoogle() async {
     _setLoading();
@@ -122,8 +151,7 @@ class AuthProvider extends ChangeNotifier {
         idToken: googleAuth.idToken,
       );
 
-      final userCredential =
-          await _auth.signInWithCredential(credential);
+      final userCredential = await _auth.signInWithCredential(credential);
 
       _firebaseUser = userCredential.user;
 
@@ -141,9 +169,7 @@ class AuthProvider extends ChangeNotifier {
 
       final response = await DioClient.instance.post(
         ApiConstants.verifyToken,
-        data: {
-          "firebase_token": firebaseToken,
-        },
+        data: {"firebase_token": firebaseToken},
       );
 
       final token = response.data['data']['access_token'];
