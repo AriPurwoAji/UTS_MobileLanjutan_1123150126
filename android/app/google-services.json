@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "672409292297",
+    "project_id": "hydraulic-store",
+    "storage_bucket": "hydraulic-store.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672409292297:android:c9825f449d4f6fd76332d8",
+        "android_client_info": {
+          "package_name": "com.example.hydraulicstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672409292297-5feu5i337ggghisojhn0ri2g14c4oink.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdRt_4UDllutm0WcOiMC7D1WypCmyHiy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672409292297-5feu5i337ggghisojhn0ri2g14c4oink.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "672409292297-spo8m6aks1qaqpilucb0dq726b0butpi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hydraulicstore"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672409292297:android:5762732c239b15416332d8",
+        "android_client_info": {
+          "package_name": "hydraulicstore.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672409292297-5feu5i337ggghisojhn0ri2g14c4oink.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdRt_4UDllutm0WcOiMC7D1WypCmyHiy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672409292297-5feu5i337ggghisojhn0ri2g14c4oink.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "672409292297-spo8m6aks1qaqpilucb0dq726b0butpi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hydraulicstore"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
