@@ -187,6 +187,26 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
+  // ================= CHECK LOGIN STATUS =================
+  Future<void> checkLoginStatus() async {
+  _setLoading();
+
+  try {
+    final token = await SecureStorageService.getToken();
+
+    if (token == null) {
+      _status = AuthStatus.unauthenticated;
+    } else {
+      _backendToken = token;
+      _status = AuthStatus.authenticated;
+    }
+  } catch (e) {
+    _status = AuthStatus.unauthenticated;
+  }
+
+  notifyListeners();
+}
+
   // ================= LOGOUT =================
   Future<void> logout() async {
     await _auth.signOut();
