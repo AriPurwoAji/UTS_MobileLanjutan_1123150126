@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'features/auth/presentation/providers/auth_providers.dart';
 import 'features/auth/presentation/pages/splash_page.dart';
+import 'core/routes/guards/auth_guard.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,10 +30,12 @@ class MyApp extends StatelessWidget {
 
         // OPTIONAL ROUTES
         routes: {
-          '/home': (context) => const Scaffold(
-                body: Center(child: Text("HOME PAGE")),
-              ),
-        },
+    '/home': (context) => const AuthGuard(
+          child: Scaffold(
+            body: Center(child: Text("HOME PAGE")),
+          ),
+        ),
+  },
       ),
     );
   }
